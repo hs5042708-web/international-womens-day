@@ -1,0 +1,317 @@
+:root{
+
+--pink:#ff2bd6;
+--blue:#00eaff;
+--bg:#0a0a0a;
+--card:#1a1a1a;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:var(--bg);
+color:white;
+font-family:'Inter',sans-serif;
+text-align:center;
+overflow-x:hidden;
+
+}
+
+header{
+
+height:60vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+}
+
+.glow{
+
+font-family:'Playfair Display';
+font-size:70px;
+color:var(--pink);
+text-shadow:0 0 20px var(--pink),0 0 40px var(--blue);
+
+animation: glow 2s infinite alternate;
+
+}
+.happy{
+
+font-size:35px;
+margin:10px 0;
+color:#00eaff;
+
+text-shadow:
+0 0 10px #00eaff,
+0 0 20px #ff2bd6,
+0 0 30px #00eaff;
+
+animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.1);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+@keyframes glow{
+
+from{ text-shadow:0 0 10px var(--pink); }
+
+to{ text-shadow:0 0 30px var(--pink),0 0 60px var(--blue); }
+
+}
+
+
+.slider-section{
+
+padding:60px 0;
+
+}
+
+.slider-container{
+
+max-width:900px;
+margin:auto;
+overflow:hidden;
+border:2px solid var(--blue);
+box-shadow:0 0 25px var(--blue);
+
+}
+
+.slides{
+
+display:flex;
+transition:0.6s;
+
+}
+
+.slide{
+
+min-width:100%;
+position:relative;
+
+}
+
+.slide img{
+
+width:100%;
+height:450px;
+object-fit:cover;
+
+}
+
+.slide-text{
+
+position:absolute;
+bottom:20px;
+left:20px;
+background:var(--pink);
+padding:10px 20px;
+font-weight:bold;
+
+}
+
+.stats-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:60px 10%;
+
+}
+
+.stat-card{
+
+background:var(--card);
+padding:40px;
+border-bottom:3px solid var(--pink);
+
+}
+
+.quote-zone{
+
+padding:80px 10%;
+
+}
+
+#quoteBox{
+
+font-size:24px;
+margin:30px 0;
+color:var(--blue);
+
+}
+
+button{
+
+padding:14px 35px;
+background:var(--pink);
+border:none;
+color:white;
+cursor:pointer;
+font-weight:bold;
+box-shadow:0 0 15px var(--pink);
+
+}
+
+button:hover{
+
+background:var(--blue);
+box-shadow:0 0 15px var(--blue);
+
+}
+
+footer{
+
+padding:30px;
+border-top:1px solid #333;
+
+}
+
+
+/* floating hearts */
+
+.hearts::before,
+.hearts::after{
+
+content:"💖";
+position:fixed;
+font-size:30px;
+animation: float 10s linear infinite;
+
+}
+
+.hearts::after{
+
+left:80%;
+animation-delay:5s;
+
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-10vh);
+opacity:0;
+}
+
+}
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px){
+
+header{
+height:auto;
+padding:60px 20px;
+}
+
+.glow{
+font-size:40px;
+}
+
+.happy{
+font-size:24px;
+}
+
+.slider-section{
+padding:40px 10px;
+}
+
+.slider-container{
+max-width:95%;
+}
+
+.slide img{
+height:250px;
+}
+
+.slide-text{
+font-size:14px;
+padding:8px 15px;
+}
+
+.stats-grid{
+grid-template-columns:1fr;
+padding:40px 20px;
+}
+
+.stat-card{
+padding:25px;
+}
+
+.quote-zone{
+padding:60px 20px;
+}
+
+#quoteBox{
+font-size:18px;
+}
+
+button{
+padding:12px 25px;
+font-size:14px;
+}
+
+footer{
+font-size:14px;
+padding:20px;
+}
+
+}
+
+
+/* ===== EXTRA SMALL PHONES ===== */
+
+@media (max-width:480px){
+
+.glow{
+font-size:32px;
+}
+
+.happy{
+font-size:20px;
+}
+
+.slide img{
+height:200px;
+}
+
+#quoteBox{
+font-size:16px;
+}
+
+button{
+padding:10px 20px;
+font-size:13px;
+}
+
+}
